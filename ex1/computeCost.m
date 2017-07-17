@@ -7,18 +7,16 @@ function J = computeCost(X, y, theta)
 m = length(y); % number of training examples
 
 % You need to return the following variables correctly
-mul = X*theta;
-mul = mul-y;
-mul = mul.^2;
-mul = sum(mul);
-J = 1/(2*m) * mul;
+J = 0
 
 % ====================== YOUR CODE HERE ======================
 % Instructions: Compute the cost of a particular choice of theta
 %               You should set J to the cost.
-
-
-
+mul = X*theta;  %matrix multiplication
+mul = mul-y; %foreach hypothesis, minus actual result
+mul = mul.^2;  %squareError
+mul = sum(mul);
+J = 1/(2*m) * mul;
 
 
 % =========================================================================
